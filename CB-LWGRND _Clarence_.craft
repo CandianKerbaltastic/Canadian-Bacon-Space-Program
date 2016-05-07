@@ -1,0 +1,3390 @@
+ship = CB-LWGRND "Clarence"
+version = 1.1.2
+description = 
+type = SPH
+size = 20.48523,12.05646,32.09684
+PART
+{
+	part = B9.Cockpit.M27_4288631872
+	partName = CommandPod
+	pos = 0.6,10,17.4
+	attPos = -0.06027412,-0.02584171,9.901827
+	attPos0 = 0.6602741,10.02584,7.498173
+	rot = 0.7071068,0,0,0.7071068
+	attRot = 0,0,0,1
+	attRot0 = 0.7071068,0,0,0.7071068
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = B9.Structure.HX1.S.H6_4288606746
+	attN = bottom,B9.Structure.HX1.S.H6_4288606746
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = FSanimateGeneric
+		isEnabled = True
+		startDeployed = False
+		isAnimating = False
+		animTime = 0
+		reverseAnimation = False
+		animSpeed = -1
+		hasBeenInitialized = True
+		stagingEnabled = True
+		EVENTS
+		{
+			toggleEvent
+			{
+				active = True
+				guiActive = True
+				guiActiveEditor = True
+				guiActiveUncommand = False
+				guiIcon = Deploy
+				guiName = Turn cockpit lights on
+				category = Deploy
+				guiActiveUnfocused = False
+				unfocusedRange = 5
+				externalToEVAOnly = True
+			}
+			ToggleStaging
+			{
+				active = True
+				guiActive = False
+				guiActiveUncommand = False
+				guiIcon = Disable Staging
+				guiName = Disable Staging
+				category = Disable Staging
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			toggleAction
+			{
+				actionGroup = None
+			}
+		}
+	}
+	MODULE
+	{
+		name = ModuleCommand
+		isEnabled = True
+		controlSrcStatusText = 
+		stagingEnabled = True
+		EVENTS
+		{
+			MakeReference
+			{
+				active = True
+				guiActive = True
+				guiActiveUncommand = False
+				guiIcon = Control From Here
+				guiName = Control From Here
+				category = Control From Here
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			RenameVessel
+			{
+				active = True
+				guiActive = True
+				guiActiveUncommand = True
+				guiIcon = Rename Vessel
+				guiName = Rename Vessel
+				category = Rename Vessel
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			ToggleStaging
+			{
+				active = True
+				guiActive = False
+				guiActiveUncommand = False
+				guiIcon = Disable Staging
+				guiName = Disable Staging
+				category = Disable Staging
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleSAS
+		isEnabled = True
+		standaloneToggle = True
+		stagingEnabled = True
+		standaloneToggle_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+			ToggleStaging
+			{
+				active = True
+				guiActive = False
+				guiActiveUncommand = False
+				guiIcon = Disable Staging
+				guiName = Disable Staging
+				category = Disable Staging
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleReactionWheel
+		isEnabled = True
+		actuatorModeCycle = 0
+		stateString = Active
+		stagingEnabled = True
+		WheelState = Active
+		actuatorModeCycle_UIFlight
+		{
+			controlEnabled = True
+			stateNames = Normal, SAS Only, Pilot Only
+		}
+		EVENTS
+		{
+			OnToggle
+			{
+				active = True
+				guiActive = True
+				guiActiveEditor = True
+				guiActiveUncommand = False
+				guiIcon = Toggle Torque
+				guiName = Toggle Torque
+				category = Toggle Torque
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			ToggleStaging
+			{
+				active = True
+				guiActive = False
+				guiActiveUncommand = False
+				guiIcon = Disable Staging
+				guiName = Disable Staging
+				category = Disable Staging
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			Activate
+			{
+				actionGroup = None
+			}
+			Deactivate
+			{
+				actionGroup = None
+			}
+			Toggle
+			{
+				actionGroup = None
+			}
+		}
+	}
+	MODULE
+	{
+		name = RasterPropMonitorComputer
+		isEnabled = True
+		vesselDescription = 
+		stagingEnabled = True
+		EVENTS
+		{
+			ToggleStaging
+			{
+				active = True
+				guiActive = False
+				guiActiveUncommand = False
+				guiIcon = Disable Staging
+				guiName = Disable Staging
+				category = Disable Staging
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleScienceExperiment
+		isEnabled = True
+		Deployed = False
+		Inoperable = False
+		cooldownToGo = 0
+		stagingEnabled = True
+		EVENTS
+		{
+			DeployExperiment
+			{
+				active = True
+				guiActive = True
+				guiActiveUncommand = False
+				guiIcon = Deploy
+				guiName = Deploy
+				category = Deploy
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			CollectDataExternalEvent
+			{
+				active = True
+				guiActive = False
+				guiActiveUncommand = False
+				guiIcon = 
+				guiName = 
+				category = 
+				guiActiveUnfocused = True
+				unfocusedRange = 1.5
+				externalToEVAOnly = True
+			}
+			ReviewDataEvent
+			{
+				active = True
+				guiActive = True
+				guiActiveUncommand = False
+				guiIcon = Review Data
+				guiName = Review Data
+				category = Review Data
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			ResetExperiment
+			{
+				active = True
+				guiActive = True
+				guiActiveUncommand = False
+				guiIcon = Reset
+				guiName = Reset
+				category = Reset
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DeployExperimentExternal
+			{
+				active = True
+				guiActive = False
+				guiActiveUncommand = False
+				guiIcon = Deploy
+				guiName = Deploy
+				category = Deploy
+				guiActiveUnfocused = True
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			ResetExperimentExternal
+			{
+				active = True
+				guiActive = False
+				guiActiveUncommand = False
+				guiIcon = Reset
+				guiName = Reset
+				category = Reset
+				guiActiveUnfocused = True
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			CleanUpExperimentExternal
+			{
+				active = True
+				guiActive = False
+				guiActiveUncommand = False
+				guiIcon = Restore
+				guiName = Restore
+				category = Restore
+				guiActiveUnfocused = True
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			ToggleStaging
+			{
+				active = True
+				guiActive = False
+				guiActiveUncommand = False
+				guiIcon = Disable Staging
+				guiName = Experiment: Disable Staging
+				category = Disable Staging
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			DeployAction
+			{
+				actionGroup = None
+			}
+			ResetAction
+			{
+				actionGroup = None
+			}
+		}
+	}
+	MODULE
+	{
+		name = ModuleScienceContainer
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+			StoreDataExternalEvent
+			{
+				active = False
+				guiActive = False
+				guiActiveUncommand = False
+				guiIcon = 
+				guiName = Store Experiments (0)
+				category = 
+				guiActiveUnfocused = True
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			CollectDataExternalEvent
+			{
+				active = False
+				guiActive = False
+				guiActiveUncommand = False
+				guiIcon = 
+				guiName = Take Data (0)
+				category = 
+				guiActiveUnfocused = True
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			ReviewDataEvent
+			{
+				active = False
+				guiActive = True
+				guiActiveUncommand = False
+				guiIcon = Review Data
+				guiName = Review Stored Data (0)
+				category = Review Data
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			ToggleStaging
+			{
+				active = True
+				guiActive = False
+				guiActiveUncommand = False
+				guiIcon = Disable Staging
+				guiName = Disable Staging
+				category = Disable Staging
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = FlagDecal
+		isEnabled = True
+		flagDisplayed = True
+		stagingEnabled = True
+		EVENTS
+		{
+			ToggleFlag
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiActiveUncommand = False
+				guiIcon = Toggle Flag
+				guiName = Toggle Flag
+				category = Toggle Flag
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			ToggleStaging
+			{
+				active = True
+				guiActive = False
+				guiActiveUncommand = False
+				guiIcon = Disable Staging
+				guiName = Disable Staging
+				category = Disable Staging
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTripLogger
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+			ToggleStaging
+			{
+				active = True
+				guiActive = False
+				guiActiveUncommand = False
+				guiIcon = Disable Staging
+				guiName = Disable Staging
+				category = Disable Staging
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+		Log
+		{
+			flight = 0
+		}
+	}
+	MODULE
+	{
+		name = TransferDialogSpawner
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+			SpawnDialog
+			{
+				active = True
+				guiActive = True
+				guiActiveUncommand = True
+				guiIcon = Transfer Crew
+				guiName = Transfer Crew
+				category = Transfer Crew
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			ToggleStaging
+			{
+				active = True
+				guiActive = False
+				guiActiveUncommand = False
+				guiIcon = Disable Staging
+				guiName = Disable Staging
+				category = Disable Staging
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 150
+		maxAmount = 150
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = MonoPropellant
+		amount = 20
+		maxAmount = 20
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = B9.Structure.HX1.S.H6_4288606746
+	partName = Part
+	pos = 0.6,10,12.9858
+	attPos = 0,0.01419878,-0.1999998
+	attPos0 = 0,-4.4142,5.262136E-07
+	rot = 0.7071068,0,0,0.7071068
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = B9.Structure.HX1.S.H6_4288599824
+	link = B9.Structure.HX1.S.H6_4288599586
+	link = B9.Structure.HX1.H_4288594296
+	link = battery-25_4288497634
+	attN = right,B9.Structure.HX1.S.H6_4288599586
+	attN = left,B9.Structure.HX1.S.H6_4288599824
+	attN = front,battery-25_4288497634
+	attN = top,B9.Cockpit.M27_4288631872
+	attN = bottom,B9.Structure.HX1.H_4288594296
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = B9.Structure.HX1.S.H6_4288599824
+	partName = Part
+	pos = -6.2284,10,12.9858
+	attPos = 0,0,0
+	attPos0 = -6.8284,-9.536743E-07,1.136868E-13
+	rot = 0.7071068,0,0,0.7071068
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = B9.Structure.HX1.H_4288595406
+	link = battery-25_4288478422
+	attN = right,B9.Structure.HX1.S.H6_4288606746
+	attN = front,battery-25_4288478422
+	attN = bottom,B9.Structure.HX1.H_4288595406
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = B9.Structure.HX1.S.H6_4288599586
+	partName = Part
+	pos = 7.4284,10,12.9858
+	attPos = 0,0,0
+	attPos0 = 6.8284,-9.536743E-07,1.136868E-13
+	rot = 0.7071068,0,0,0.7071068
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = B9.Structure.HX1.H_4288593802
+	link = battery-25_4288479414
+	attN = left,B9.Structure.HX1.S.H6_4288606746
+	attN = front,battery-25_4288479414
+	attN = bottom,B9.Structure.HX1.H_4288593802
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = B9.Structure.HX1.H_4288595406
+	partName = Part
+	pos = -6.2284,10,5.571596
+	attPos = 0,0,0
+	attPos0 = 0,-7.414201,8.838416E-07
+	rot = 0.7071068,0,0,0.7071068
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 1.16
+	modSize = (0.0, 0.0, 0.0)
+	link = B9.Structure.HX1.H_4288591740
+	attN = top,B9.Structure.HX1.S.H6_4288599824
+	attN = bottom,B9.Structure.HX1.H_4288591740
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleB9PartSwitch
+		isEnabled = True
+		subtypeIndexControl = 3
+		stagingEnabled = True
+		currentSubtypeIndex = 3
+		moduleID = meshSwitch
+		subtypeIndexControl_UIEditor
+		{
+			controlEnabled = True
+			options = Enclosed, Semi-open A, Semi-open B, Semi-open C, Open
+		}
+		EVENTS
+		{
+			ToggleStaging
+			{
+				active = True
+				guiActive = False
+				guiActiveUncommand = False
+				guiIcon = Disable Staging
+				guiName = Disable Staging
+				category = Disable Staging
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleCargoBay
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+			ToggleStaging
+			{
+				active = True
+				guiActive = False
+				guiActiveUncommand = False
+				guiIcon = Disable Staging
+				guiName = Disable Staging
+				category = Disable Staging
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = B9.Structure.HX1.H_4288594296
+	partName = Part
+	pos = 0.6,10,5.571596
+	attPos = 0,0,0
+	attPos0 = 0,-7.414202,8.838417E-07
+	rot = 0.7071068,0,0,0.7071068
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 1.16
+	modSize = (0.0, 0.0, 0.0)
+	link = B9.Structure.HX1.H_4288592294
+	attN = top,B9.Structure.HX1.S.H6_4288606746
+	attN = bottom,B9.Structure.HX1.H_4288592294
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleB9PartSwitch
+		isEnabled = True
+		subtypeIndexControl = 3
+		stagingEnabled = True
+		currentSubtypeIndex = 3
+		moduleID = meshSwitch
+		subtypeIndexControl_UIEditor
+		{
+			controlEnabled = True
+			options = Enclosed, Semi-open A, Semi-open B, Semi-open C, Open
+		}
+		EVENTS
+		{
+			ToggleStaging
+			{
+				active = True
+				guiActive = False
+				guiActiveUncommand = False
+				guiIcon = Disable Staging
+				guiName = Disable Staging
+				category = Disable Staging
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleCargoBay
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+			ToggleStaging
+			{
+				active = True
+				guiActive = False
+				guiActiveUncommand = False
+				guiIcon = Disable Staging
+				guiName = Disable Staging
+				category = Disable Staging
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = B9.Structure.HX1.H_4288593802
+	partName = Part
+	pos = 7.4284,10,5.571596
+	attPos = 0,0,0
+	attPos0 = 0,-7.414201,8.838416E-07
+	rot = 0.7071068,0,0,0.7071068
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 1.16
+	modSize = (0.0, 0.0, 0.0)
+	link = B9.Structure.HX1.H_4288591156
+	attN = top,B9.Structure.HX1.S.H6_4288599586
+	attN = bottom,B9.Structure.HX1.H_4288591156
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleB9PartSwitch
+		isEnabled = True
+		subtypeIndexControl = 3
+		stagingEnabled = True
+		currentSubtypeIndex = 3
+		moduleID = meshSwitch
+		subtypeIndexControl_UIEditor
+		{
+			controlEnabled = True
+			options = Enclosed, Semi-open A, Semi-open B, Semi-open C, Open
+		}
+		EVENTS
+		{
+			ToggleStaging
+			{
+				active = True
+				guiActive = False
+				guiActiveUncommand = False
+				guiIcon = Disable Staging
+				guiName = Disable Staging
+				category = Disable Staging
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleCargoBay
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+			ToggleStaging
+			{
+				active = True
+				guiActive = False
+				guiActiveUncommand = False
+				guiIcon = Disable Staging
+				guiName = Disable Staging
+				category = Disable Staging
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = B9.Structure.HX1.H_4288592294
+	partName = Part
+	pos = 0.6,10,-2.428408
+	attPos = 0,0,0
+	attPos0 = 0,-8.000004,9.536745E-07
+	rot = 0.7071068,0,0,0.7071068
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 1.16
+	modSize = (0.0, 0.0, 0.0)
+	link = B9.Structure.HX1.S.H6_4288579648
+	attN = top,B9.Structure.HX1.H_4288594296
+	attN = bottom,B9.Structure.HX1.S.H6_4288579648
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleB9PartSwitch
+		isEnabled = True
+		subtypeIndexControl = 3
+		stagingEnabled = True
+		currentSubtypeIndex = 3
+		moduleID = meshSwitch
+		subtypeIndexControl_UIEditor
+		{
+			controlEnabled = True
+			options = Enclosed, Semi-open A, Semi-open B, Semi-open C, Open
+		}
+		EVENTS
+		{
+			ToggleStaging
+			{
+				active = True
+				guiActive = False
+				guiActiveUncommand = False
+				guiIcon = Disable Staging
+				guiName = Disable Staging
+				category = Disable Staging
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleCargoBay
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+			ToggleStaging
+			{
+				active = True
+				guiActive = False
+				guiActiveUncommand = False
+				guiIcon = Disable Staging
+				guiName = Disable Staging
+				category = Disable Staging
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = B9.Structure.HX1.H_4288591740
+	partName = Part
+	pos = -6.2284,10,-2.428411
+	attPos = 0,0,0
+	attPos0 = 0,-8.000006,3.410605E-13
+	rot = 0.7071068,0,0,0.7071068
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 1.16
+	modSize = (0.0, 0.0, 0.0)
+	attN = top,B9.Structure.HX1.H_4288595406
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleB9PartSwitch
+		isEnabled = True
+		subtypeIndexControl = 3
+		stagingEnabled = True
+		currentSubtypeIndex = 3
+		moduleID = meshSwitch
+		subtypeIndexControl_UIEditor
+		{
+			controlEnabled = True
+			options = Enclosed, Semi-open A, Semi-open B, Semi-open C, Open
+		}
+		EVENTS
+		{
+			ToggleStaging
+			{
+				active = True
+				guiActive = False
+				guiActiveUncommand = False
+				guiIcon = Disable Staging
+				guiName = Disable Staging
+				category = Disable Staging
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleCargoBay
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+			ToggleStaging
+			{
+				active = True
+				guiActive = False
+				guiActiveUncommand = False
+				guiIcon = Disable Staging
+				guiName = Disable Staging
+				category = Disable Staging
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = B9.Structure.HX1.H_4288591156
+	partName = Part
+	pos = 7.4284,10,-2.428411
+	attPos = 0,0,0
+	attPos0 = 0,-8.000006,3.410605E-13
+	rot = 0.7071068,0,0,0.7071068
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 1.16
+	modSize = (0.0, 0.0, 0.0)
+	attN = top,B9.Structure.HX1.H_4288593802
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleB9PartSwitch
+		isEnabled = True
+		subtypeIndexControl = 3
+		stagingEnabled = True
+		currentSubtypeIndex = 3
+		moduleID = meshSwitch
+		subtypeIndexControl_UIEditor
+		{
+			controlEnabled = True
+			options = Enclosed, Semi-open A, Semi-open B, Semi-open C, Open
+		}
+		EVENTS
+		{
+			ToggleStaging
+			{
+				active = True
+				guiActive = False
+				guiActiveUncommand = False
+				guiIcon = Disable Staging
+				guiName = Disable Staging
+				category = Disable Staging
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleCargoBay
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+			ToggleStaging
+			{
+				active = True
+				guiActive = False
+				guiActiveUncommand = False
+				guiIcon = Disable Staging
+				guiName = Disable Staging
+				category = Disable Staging
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = B9.Structure.HX1.S.H6_4288579648
+	partName = Part
+	pos = 0.6,10,-9.842615
+	attPos = 0,0,0
+	attPos0 = 0,-7.414206,8.838419E-07
+	rot = 0.7071068,0,0,0.7071068
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = B9.Structure.HX1.S.H6_4288579150
+	link = B9.Structure.HX1.S.H6_4288575626
+	link = battery-25_4288539854
+	attN = right,B9.Structure.HX1.S.H6_4288575626
+	attN = left,B9.Structure.HX1.S.H6_4288579150
+	attN = front,battery-25_4288539854
+	attN = top,B9.Structure.HX1.H_4288592294
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = B9.Structure.HX1.S.H6_4288579150
+	partName = Part
+	pos = -6.2284,10,-9.842623
+	attPos = 0,0,0
+	attPos0 = -6.8284,-7.629395E-06,9.094947E-13
+	rot = 0.7071068,0,0,0.7071068
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = battery-25_4288499618
+	attN = right,B9.Structure.HX1.S.H6_4288579648
+	attN = front,battery-25_4288499618
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = B9.Structure.HX1.S.H6_4288575626
+	partName = Part
+	pos = 7.4284,10,-9.842623
+	attPos = 0,0,0
+	attPos0 = 6.8284,-7.629395E-06,9.094947E-13
+	rot = 0.7071068,0,0,0.7071068
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = battery-25_4288498626
+	attN = left,B9.Structure.HX1.S.H6_4288579648
+	attN = front,battery-25_4288498626
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = battery-25_4288539854
+	partName = Part
+	pos = 0.6,13.77941,-9.842623
+	attPos = 0,0,0
+	attPos0 = 0,-7.629395E-06,-3.779414
+	rot = 1,0,0,0
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 0.7071068,0,0,0.7071068
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = battery-25_4288538078
+	attN = top,B9.Structure.HX1.S.H6_4288579648
+	attN = bottom,battery-25_4288538078
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 12000
+		maxAmount = 12000
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = battery-25_4288538078
+	partName = Part
+	pos = 0.6,14.53117,-9.84263
+	attPos = 0,0,0
+	attPos0 = 0,-0.7517577,7.719012E-06
+	rot = 1,0,0,0
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = battery-25_4288540446
+	attN = top,battery-25_4288539854
+	attN = bottom,battery-25_4288540446
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 12000
+		maxAmount = 12000
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = battery-25_4288540446
+	partName = Part
+	pos = 0.6,15.28293,-9.842638
+	attPos = 0,0,0
+	attPos0 = 0,-0.7517568,7.719012E-06
+	rot = 1,0,0,0
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = battery-25_4288539262
+	link = solarpanel-curved-25-1_4288501882
+	link = solarpanel-curved-25-1_4288501060
+	link = solarpanel-curved-25-1_4288500920
+	link = solarpanel-curved-25-1_4288499758
+	attN = top,battery-25_4288538078
+	attN = bottom,battery-25_4288539262
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 12000
+		maxAmount = 12000
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = battery-25_4288539262
+	partName = Part
+	pos = 0.6,16.03468,-9.842646
+	attPos = 0,0,0
+	attPos0 = 0,-0.7517562,7.719013E-06
+	rot = 1,0,0,0
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = trusslrg-hub-2_4288422890
+	attN = top,battery-25_4288540446
+	attN = bottom,trusslrg-hub-2_4288422890
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 12000
+		maxAmount = 12000
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = solarpanel-curved-25-1_4288501882
+	partName = Part
+	pos = 0.6529194,15.41679,-9.842646
+	attPos = 0,0,0
+	attPos0 = 0.05291939,-0.1338663,7.645355E-06
+	rot = -0.9238796,-8.940697E-08,0.3826835,0
+	attRot = 0,0,0,1
+	attRot0 = 2.656615E-08,0.3826834,6.413637E-08,-0.9238795
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = solarpanel-curved-25-1_4288501060
+	srfN = srfAttach,battery-25_4288540446
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = solarpanel-curved-25-1_4288501060
+	partName = Part
+	pos = 0.5470806,15.41679,-9.842646
+	attPos = 0,0,0
+	attPos0 = -0.05291939,-0.1338663,7.645355E-06
+	rot = -0.3826835,0,0.9238797,8.940697E-08
+	attRot = 0,0,0,1
+	attRot0 = -6.413633E-08,0.9238796,-2.656611E-08,-0.3826834
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = solarpanel-curved-25-1_4288501882
+	srfN = srfAttach,battery-25_4288540446
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = solarpanel-curved-25-1_4288500920
+	partName = Part
+	pos = 0.5968707,15.40399,-9.830969
+	attPos = 0,0,0
+	attPos0 = -0.003129303,-0.1210585,-0.01166914
+	rot = -0.8660257,8.940697E-08,-0.4999998,2.682209E-07
+	attRot = 0,0,0,1
+	attRot0 = -2.502535E-07,-0.4999998,-6.705528E-08,-0.8660255
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = solarpanel-curved-25-1_4288499758
+	srfN = srfAttach,battery-25_4288540446
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = solarpanel-curved-25-1_4288499758
+	partName = Part
+	pos = 0.6031293,15.40399,-9.830969
+	attPos = 0,0,0
+	attPos0 = 0.003129303,-0.1210585,-0.01166914
+	rot = 0.4999998,-2.682209E-07,0.8660257,-7.450581E-08
+	attRot = 0,0,0,1
+	attRot0 = 6.705529E-08,0.8660256,2.502535E-07,0.4999997
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = solarpanel-curved-25-1_4288500920
+	srfN = srfAttach,battery-25_4288540446
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = battery-25_4288499618
+	partName = Part
+	pos = -6.2284,13.77941,-9.84263
+	attPos = 0,0,0
+	attPos0 = 0,-7.629395E-06,-3.779414
+	rot = 1,0,0,0
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 0.7071068,0,0,0.7071068
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = battery-25_4288499568
+	attN = top,B9.Structure.HX1.S.H6_4288579150
+	attN = bottom,battery-25_4288499568
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 12000
+		maxAmount = 12000
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = battery-25_4288499568
+	partName = Part
+	pos = -6.2284,14.53117,-9.842638
+	attPos = 0,0,0
+	attPos0 = 0,-0.7517577,7.719012E-06
+	rot = 1,0,0,0
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = battery-25_4288499518
+	attN = top,battery-25_4288499618
+	attN = bottom,battery-25_4288499518
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 12000
+		maxAmount = 12000
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = battery-25_4288499518
+	partName = Part
+	pos = -6.2284,15.28293,-9.842646
+	attPos = 0,0,0
+	attPos0 = 0,-0.7517568,7.719012E-06
+	rot = 1,0,0,0
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = battery-25_4288499468
+	link = solarpanel-curved-25-1_4288499418
+	link = solarpanel-curved-25-1_4288499360
+	link = solarpanel-curved-25-1_4288499302
+	link = solarpanel-curved-25-1_4288499244
+	attN = top,battery-25_4288499568
+	attN = bottom,battery-25_4288499468
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 12000
+		maxAmount = 12000
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = battery-25_4288499468
+	partName = Part
+	pos = -6.2284,16.03468,-9.842653
+	attPos = 0,0,0
+	attPos0 = 0,-0.7517562,7.719013E-06
+	rot = 1,0,0,0
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = trusslrg-hub-2_4288423566
+	attN = top,battery-25_4288499518
+	attN = bottom,trusslrg-hub-2_4288423566
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 12000
+		maxAmount = 12000
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = solarpanel-curved-25-1_4288499418
+	partName = Part
+	pos = -6.175481,15.41679,-9.842653
+	attPos = 0,0,0
+	attPos0 = 0.05291939,-0.1338663,7.645355E-06
+	rot = -0.9238796,-8.940697E-08,0.3826835,0
+	attRot = 0,0,0,1
+	attRot0 = 2.656615E-08,0.3826834,6.413637E-08,-0.9238795
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = solarpanel-curved-25-1_4288499360
+	srfN = srfAttach,battery-25_4288499518
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = solarpanel-curved-25-1_4288499360
+	partName = Part
+	pos = -6.28132,15.41679,-9.842653
+	attPos = 0,0,0
+	attPos0 = -0.05291939,-0.1338663,7.645355E-06
+	rot = -0.3826835,0,0.9238797,8.940697E-08
+	attRot = 0,0,0,1
+	attRot0 = -6.413633E-08,0.9238796,-2.656611E-08,-0.3826834
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = solarpanel-curved-25-1_4288499418
+	srfN = srfAttach,battery-25_4288499518
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = solarpanel-curved-25-1_4288499302
+	partName = Part
+	pos = -6.23153,15.40399,-9.830976
+	attPos = 0,0,0
+	attPos0 = -0.003129303,-0.1210585,-0.01166914
+	rot = -0.8660257,8.940697E-08,-0.4999998,2.682209E-07
+	attRot = 0,0,0,1
+	attRot0 = -2.502535E-07,-0.4999998,-6.705528E-08,-0.8660255
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = solarpanel-curved-25-1_4288499244
+	srfN = srfAttach,battery-25_4288499518
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = solarpanel-curved-25-1_4288499244
+	partName = Part
+	pos = -6.225271,15.40399,-9.830976
+	attPos = 0,0,0
+	attPos0 = 0.003129303,-0.1210585,-0.01166914
+	rot = 0.4999998,-2.682209E-07,0.8660257,-7.450581E-08
+	attRot = 0,0,0,1
+	attRot0 = 6.705529E-08,0.8660256,2.502535E-07,0.4999997
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = solarpanel-curved-25-1_4288499302
+	srfN = srfAttach,battery-25_4288499518
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = battery-25_4288498626
+	partName = Part
+	pos = 7.4284,13.77941,-9.84263
+	attPos = 0,0,0
+	attPos0 = 0,-7.629395E-06,-3.779414
+	rot = 1,0,0,0
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 0.7071068,0,0,0.7071068
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = battery-25_4288498576
+	attN = top,B9.Structure.HX1.S.H6_4288575626
+	attN = bottom,battery-25_4288498576
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 12000
+		maxAmount = 12000
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = battery-25_4288498576
+	partName = Part
+	pos = 7.4284,14.53117,-9.842638
+	attPos = 0,0,0
+	attPos0 = 0,-0.7517577,7.719012E-06
+	rot = 1,0,0,0
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = battery-25_4288498526
+	attN = top,battery-25_4288498626
+	attN = bottom,battery-25_4288498526
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 12000
+		maxAmount = 12000
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = battery-25_4288498526
+	partName = Part
+	pos = 7.4284,15.28293,-9.842646
+	attPos = 0,0,0
+	attPos0 = 0,-0.7517568,7.719012E-06
+	rot = 1,0,0,0
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = battery-25_4288498476
+	link = solarpanel-curved-25-1_4288498426
+	link = solarpanel-curved-25-1_4288498368
+	link = solarpanel-curved-25-1_4288498310
+	link = solarpanel-curved-25-1_4288498252
+	attN = top,battery-25_4288498576
+	attN = bottom,battery-25_4288498476
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 12000
+		maxAmount = 12000
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = battery-25_4288498476
+	partName = Part
+	pos = 7.4284,16.03468,-9.842653
+	attPos = 0,0,0
+	attPos0 = 0,-0.7517562,7.719013E-06
+	rot = 1,0,0,0
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = trusslrg-hub-2_4288424202
+	attN = top,battery-25_4288498526
+	attN = bottom,trusslrg-hub-2_4288424202
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 12000
+		maxAmount = 12000
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = solarpanel-curved-25-1_4288498426
+	partName = Part
+	pos = 7.481319,15.41679,-9.842653
+	attPos = 0,0,0
+	attPos0 = 0.05291939,-0.1338663,7.645355E-06
+	rot = -0.9238796,-8.940697E-08,0.3826835,0
+	attRot = 0,0,0,1
+	attRot0 = 2.656615E-08,0.3826834,6.413637E-08,-0.9238795
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = solarpanel-curved-25-1_4288498368
+	srfN = srfAttach,battery-25_4288498526
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = solarpanel-curved-25-1_4288498368
+	partName = Part
+	pos = 7.375481,15.41679,-9.842653
+	attPos = 0,0,0
+	attPos0 = -0.05291939,-0.1338663,7.645355E-06
+	rot = -0.3826835,0,0.9238797,8.940697E-08
+	attRot = 0,0,0,1
+	attRot0 = -6.413633E-08,0.9238796,-2.656611E-08,-0.3826834
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = solarpanel-curved-25-1_4288498426
+	srfN = srfAttach,battery-25_4288498526
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = solarpanel-curved-25-1_4288498310
+	partName = Part
+	pos = 7.425271,15.40399,-9.830976
+	attPos = 0,0,0
+	attPos0 = -0.003129303,-0.1210585,-0.01166914
+	rot = -0.8660257,8.940697E-08,-0.4999998,2.682209E-07
+	attRot = 0,0,0,1
+	attRot0 = -2.502535E-07,-0.4999998,-6.705528E-08,-0.8660255
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = solarpanel-curved-25-1_4288498252
+	srfN = srfAttach,battery-25_4288498526
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = solarpanel-curved-25-1_4288498252
+	partName = Part
+	pos = 7.43153,15.40399,-9.830976
+	attPos = 0,0,0
+	attPos0 = 0.003129303,-0.1210585,-0.01166914
+	rot = 0.4999998,-2.682209E-07,0.8660257,-7.450581E-08
+	attRot = 0,0,0,1
+	attRot0 = 6.705529E-08,0.8660256,2.502535E-07,0.4999997
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = solarpanel-curved-25-1_4288498310
+	srfN = srfAttach,battery-25_4288498526
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = battery-25_4288497634
+	partName = Part
+	pos = 0.6,13.77941,12.9858
+	attPos = 0,0,0
+	attPos0 = 0,-4.768372E-07,-3.779414
+	rot = 1,0,0,0
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 0.7071068,0,0,0.7071068
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = battery-25_4288497584
+	attN = top,B9.Structure.HX1.S.H6_4288606746
+	attN = bottom,battery-25_4288497584
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 12000
+		maxAmount = 12000
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = battery-25_4288497584
+	partName = Part
+	pos = 0.6,14.53117,12.98579
+	attPos = 0,0,0
+	attPos0 = 0,-0.7517577,7.719012E-06
+	rot = 1,0,0,0
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = battery-25_4288497534
+	attN = top,battery-25_4288497634
+	attN = bottom,battery-25_4288497534
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 12000
+		maxAmount = 12000
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = battery-25_4288497534
+	partName = Part
+	pos = 0.6,15.28293,12.98578
+	attPos = 0,0,0
+	attPos0 = 0,-0.7517568,7.719012E-06
+	rot = 1,0,0,0
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = battery-25_4288497484
+	link = solarpanel-curved-25-1_4288497434
+	link = solarpanel-curved-25-1_4288497376
+	link = solarpanel-curved-25-1_4288497318
+	link = solarpanel-curved-25-1_4288497260
+	attN = top,battery-25_4288497584
+	attN = bottom,battery-25_4288497484
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 12000
+		maxAmount = 12000
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = battery-25_4288497484
+	partName = Part
+	pos = 0.6,16.03468,12.98578
+	attPos = 0,0,0
+	attPos0 = 0,-0.7517562,7.719013E-06
+	rot = 1,0,0,0
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = trusslrg-hub-2_4288420770
+	attN = top,battery-25_4288497534
+	attN = bottom,trusslrg-hub-2_4288420770
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 12000
+		maxAmount = 12000
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = solarpanel-curved-25-1_4288497434
+	partName = Part
+	pos = 0.6529194,15.41679,12.98578
+	attPos = 0,0,0
+	attPos0 = 0.05291939,-0.1338663,7.645355E-06
+	rot = -0.9238796,-8.940697E-08,0.3826835,0
+	attRot = 0,0,0,1
+	attRot0 = 2.656615E-08,0.3826834,6.413637E-08,-0.9238795
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = solarpanel-curved-25-1_4288497376
+	srfN = srfAttach,battery-25_4288497534
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = solarpanel-curved-25-1_4288497376
+	partName = Part
+	pos = 0.5470806,15.41679,12.98578
+	attPos = 0,0,0
+	attPos0 = -0.05291939,-0.1338663,7.645355E-06
+	rot = -0.3826835,0,0.9238797,8.940697E-08
+	attRot = 0,0,0,1
+	attRot0 = -6.413633E-08,0.9238796,-2.656611E-08,-0.3826834
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = solarpanel-curved-25-1_4288497434
+	srfN = srfAttach,battery-25_4288497534
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = solarpanel-curved-25-1_4288497318
+	partName = Part
+	pos = 0.5968707,15.40399,12.99745
+	attPos = 0,0,0
+	attPos0 = -0.003129303,-0.1210585,-0.01166914
+	rot = -0.8660257,8.940697E-08,-0.4999998,2.682209E-07
+	attRot = 0,0,0,1
+	attRot0 = -2.502535E-07,-0.4999998,-6.705528E-08,-0.8660255
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = solarpanel-curved-25-1_4288497260
+	srfN = srfAttach,battery-25_4288497534
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = solarpanel-curved-25-1_4288497260
+	partName = Part
+	pos = 0.6031293,15.40399,12.99745
+	attPos = 0,0,0
+	attPos0 = 0.003129303,-0.1210585,-0.01166914
+	rot = 0.4999998,-2.682209E-07,0.8660257,-7.450581E-08
+	attRot = 0,0,0,1
+	attRot0 = 6.705529E-08,0.8660256,2.502535E-07,0.4999997
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = solarpanel-curved-25-1_4288497318
+	srfN = srfAttach,battery-25_4288497534
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = battery-25_4288479414
+	partName = Part
+	pos = 7.4284,13.77941,12.9858
+	attPos = 0,0,0
+	attPos0 = 0,-1.430511E-06,-3.779414
+	rot = 1,0,0,0
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 0.7071068,0,0,0.7071068
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = battery-25_4288479364
+	attN = top,B9.Structure.HX1.S.H6_4288599586
+	attN = bottom,battery-25_4288479364
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 12000
+		maxAmount = 12000
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = battery-25_4288479364
+	partName = Part
+	pos = 7.4284,14.53117,12.98579
+	attPos = 0,0,0
+	attPos0 = 0,-0.7517577,7.719012E-06
+	rot = 1,0,0,0
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = battery-25_4288479314
+	attN = top,battery-25_4288479414
+	attN = bottom,battery-25_4288479314
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 12000
+		maxAmount = 12000
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = battery-25_4288479314
+	partName = Part
+	pos = 7.4284,15.28293,12.98578
+	attPos = 0,0,0
+	attPos0 = 0,-0.7517568,7.719012E-06
+	rot = 1,0,0,0
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = battery-25_4288479264
+	link = solarpanel-curved-25-1_4288479214
+	link = solarpanel-curved-25-1_4288479156
+	link = solarpanel-curved-25-1_4288479098
+	link = solarpanel-curved-25-1_4288479040
+	attN = top,battery-25_4288479364
+	attN = bottom,battery-25_4288479264
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 12000
+		maxAmount = 12000
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = battery-25_4288479264
+	partName = Part
+	pos = 7.4284,16.03468,12.98577
+	attPos = 0,0,0
+	attPos0 = 0,-0.7517562,7.719013E-06
+	rot = 1,0,0,0
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = trusslrg-hub-2_4288419974
+	attN = top,battery-25_4288479314
+	attN = bottom,trusslrg-hub-2_4288419974
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 12000
+		maxAmount = 12000
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = solarpanel-curved-25-1_4288479214
+	partName = Part
+	pos = 7.481319,15.41679,12.98577
+	attPos = 0,0,0
+	attPos0 = 0.05291939,-0.1338663,7.645355E-06
+	rot = -0.9238796,-8.940697E-08,0.3826835,0
+	attRot = 0,0,0,1
+	attRot0 = 2.656615E-08,0.3826834,6.413637E-08,-0.9238795
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = solarpanel-curved-25-1_4288479156
+	srfN = srfAttach,battery-25_4288479314
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = solarpanel-curved-25-1_4288479156
+	partName = Part
+	pos = 7.375481,15.41679,12.98577
+	attPos = 0,0,0
+	attPos0 = -0.05291939,-0.1338663,7.645355E-06
+	rot = -0.3826835,0,0.9238797,8.940697E-08
+	attRot = 0,0,0,1
+	attRot0 = -6.413633E-08,0.9238796,-2.656611E-08,-0.3826834
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = solarpanel-curved-25-1_4288479214
+	srfN = srfAttach,battery-25_4288479314
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = solarpanel-curved-25-1_4288479098
+	partName = Part
+	pos = 7.425271,15.40399,12.99745
+	attPos = 0,0,0
+	attPos0 = -0.003129303,-0.1210585,-0.01166914
+	rot = -0.8660257,8.940697E-08,-0.4999998,2.682209E-07
+	attRot = 0,0,0,1
+	attRot0 = -2.502535E-07,-0.4999998,-6.705528E-08,-0.8660255
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = solarpanel-curved-25-1_4288479040
+	srfN = srfAttach,battery-25_4288479314
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = solarpanel-curved-25-1_4288479040
+	partName = Part
+	pos = 7.43153,15.40399,12.99745
+	attPos = 0,0,0
+	attPos0 = 0.003129303,-0.1210585,-0.01166914
+	rot = 0.4999998,-2.682209E-07,0.8660257,-7.450581E-08
+	attRot = 0,0,0,1
+	attRot0 = 6.705529E-08,0.8660256,2.502535E-07,0.4999997
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = solarpanel-curved-25-1_4288479098
+	srfN = srfAttach,battery-25_4288479314
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = battery-25_4288478422
+	partName = Part
+	pos = -6.2284,13.77941,12.9858
+	attPos = 0,0,0
+	attPos0 = 0,-1.430511E-06,-3.779414
+	rot = 1,0,0,0
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 0.7071068,0,0,0.7071068
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = battery-25_4288478372
+	attN = top,B9.Structure.HX1.S.H6_4288599824
+	attN = bottom,battery-25_4288478372
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 12000
+		maxAmount = 12000
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = battery-25_4288478372
+	partName = Part
+	pos = -6.2284,14.53117,12.98579
+	attPos = 0,0,0
+	attPos0 = 0,-0.7517577,7.719012E-06
+	rot = 1,0,0,0
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = battery-25_4288478322
+	attN = top,battery-25_4288478422
+	attN = bottom,battery-25_4288478322
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 12000
+		maxAmount = 12000
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = trusslrg-hub-2_4288424202
+	partName = Strut
+	pos = 7.4284,17.54375,-9.842661
+	attPos = 0,0,0
+	attPos0 = 0,-1.509074,7.809288E-06
+	rot = 0.7071069,0,0,0.7071069
+	attRot = 0,0,0,1
+	attRot0 = -0.7071068,0,0,0.7071068
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	attN = back,battery-25_4288498476
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = trusslrg-hub-2_4288423566
+	partName = Strut
+	pos = -6.2284,17.54375,-9.842661
+	attPos = 0,0,0
+	attPos0 = 0,-1.509074,7.809288E-06
+	rot = 0.7071069,0,0,0.7071069
+	attRot = 0,0,0,1
+	attRot0 = -0.7071068,0,0,0.7071068
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	attN = back,battery-25_4288499468
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = trusslrg-hub-2_4288422890
+	partName = Strut
+	pos = 0.6,17.54376,-9.842653
+	attPos = 0,0,0
+	attPos0 = 0,-1.509074,7.809288E-06
+	rot = 0.7071069,0,0,0.7071069
+	attRot = 0,0,0,1
+	attRot0 = -0.7071068,0,0,0.7071068
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	attN = back,battery-25_4288539262
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = battery-25_4288478322
+	partName = Part
+	pos = -6.2284,15.28292,12.98579
+	attPos = 0,0,0
+	attPos0 = 0,-0.7517558,1.043291E-06
+	rot = 1,0,0,0
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = battery-25_4288478272
+	link = solarpanel-curved-25-1_4288478222
+	link = solarpanel-curved-25-1_4288478164
+	link = solarpanel-curved-25-1_4288478106
+	link = solarpanel-curved-25-1_4288478048
+	attN = top,battery-25_4288478372
+	attN = bottom,battery-25_4288478272
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 12000
+		maxAmount = 12000
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = battery-25_4288478272
+	partName = Part
+	pos = -6.2284,16.03468,12.98578
+	attPos = 0,0,0
+	attPos0 = 0,-0.7517562,7.719013E-06
+	rot = 1,0,0,0
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = trusslrg-hub-2_4288421526
+	attN = top,battery-25_4288478322
+	attN = bottom,trusslrg-hub-2_4288421526
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 12000
+		maxAmount = 12000
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = solarpanel-curved-25-1_4288478222
+	partName = Part
+	pos = -6.175481,15.41679,12.98578
+	attPos = 0,0,0
+	attPos0 = 0.05291939,-0.1338663,7.645355E-06
+	rot = -0.9238796,-8.940697E-08,0.3826835,0
+	attRot = 0,0,0,1
+	attRot0 = 2.656615E-08,0.3826834,6.413637E-08,-0.9238795
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = solarpanel-curved-25-1_4288478164
+	srfN = srfAttach,battery-25_4288478322
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = solarpanel-curved-25-1_4288478164
+	partName = Part
+	pos = -6.28132,15.41679,12.98578
+	attPos = 0,0,0
+	attPos0 = -0.05291939,-0.1338663,7.645355E-06
+	rot = -0.3826835,0,0.9238797,8.940697E-08
+	attRot = 0,0,0,1
+	attRot0 = -6.413633E-08,0.9238796,-2.656611E-08,-0.3826834
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = solarpanel-curved-25-1_4288478222
+	srfN = srfAttach,battery-25_4288478322
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = solarpanel-curved-25-1_4288478106
+	partName = Part
+	pos = -6.23153,15.40398,12.99746
+	attPos = 0,0,0
+	attPos0 = -0.003129303,-0.1210585,-0.01166914
+	rot = -0.8660257,8.940697E-08,-0.4999998,2.682209E-07
+	attRot = 0,0,0,1
+	attRot0 = -2.502535E-07,-0.4999998,-6.705528E-08,-0.8660255
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = solarpanel-curved-25-1_4288478048
+	srfN = srfAttach,battery-25_4288478322
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = solarpanel-curved-25-1_4288478048
+	partName = Part
+	pos = -6.225271,15.40398,12.99746
+	attPos = 0,0,0
+	attPos0 = 0.003129303,-0.1210585,-0.01166914
+	rot = 0.4999998,-2.682209E-07,0.8660257,-7.450581E-08
+	attRot = 0,0,0,1
+	attRot0 = 6.705529E-08,0.8660256,2.502535E-07,0.4999997
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = solarpanel-curved-25-1_4288478106
+	srfN = srfAttach,battery-25_4288478322
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = trusslrg-hub-2_4288421526
+	partName = Strut
+	pos = -6.2284,17.54375,12.98578
+	attPos = 0,0,0
+	attPos0 = 0,-1.509073,1.610405E-06
+	rot = 0.7071069,0,0,0.7071069
+	attRot = 0,0,0,1
+	attRot0 = -0.7071068,0,0,0.7071068
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	attN = back,battery-25_4288478272
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = trusslrg-hub-2_4288420770
+	partName = Strut
+	pos = 0.6,17.54375,12.98578
+	attPos = 0,0,0
+	attPos0 = 0,-1.509074,6.567316E-07
+	rot = 0.7071069,0,0,0.7071069
+	attRot = 0,0,0,1
+	attRot0 = -0.7071068,0,0,0.7071068
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	attN = back,battery-25_4288497484
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = trusslrg-hub-2_4288419974
+	partName = Strut
+	pos = 7.4284,17.54375,12.98577
+	attPos = 0,0,0
+	attPos0 = 0,-1.509074,6.567316E-07
+	rot = 0.7071069,0,0,0.7071069
+	attRot = 0,0,0,1
+	attRot0 = -0.7071068,0,0,0.7071068
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	attN = back,battery-25_4288479264
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
